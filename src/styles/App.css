@@ -1,0 +1,127 @@
+:root {
+  --gold-1: #FFD700;       /* Dourado vibrante */
+  --gold-2: #D4AF37;       /* Dourado clássico */
+  --gold-3: #C5A100;       /* Dourado escuro */
+  --dark-bg: #0A0A0A;      /* Preto profundo */
+  --dark-2: #1A1A1A;       /* Cinza escuro */
+  --text-light: #FFFDE7;   /* Branco cremoso */
+}
+
+/* Reset e Configurações Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+.app {
+  position: relative;
+}
+
+/* Partículas de Dinheiro (Background Animado) */
+@keyframes floatParticles {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(20px, 20px) rotate(180deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  animation: floatParticles 15s infinite ease-in-out;
+}
+
+.money {
+  color: var(--gold-1);
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.7));
+}
+
+.gold-glow {
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.cta-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--gold-2) 0%, var(--gold-1) 100%);
+  color: var(--dark-bg) !important;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 2px solid var(--gold-3);
+  box-shadow: 0 4px 20px rgba(255,215,0,0.3);
+  transition: all 0.4s;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  text-align: center;
+}
+
+.cta-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255,215,0,0.5);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+section {
+  margin: 40px 0;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, var(--gold-1), var(--gold-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 30px 10px;
+  }
+  
+  .cta-gold {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}

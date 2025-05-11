@@ -1,0 +1,308 @@
+.networking-section {
+  padding: 100px 0;
+  background: linear-gradient(to bottom, var(--dark-2), var(--dark-bg));
+  position: relative;
+  overflow: hidden;
+}
+
+/* Elementos decorativos de fundo */
+.networking-section::before,
+.networking-section::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
+  border-radius: 50%;
+}
+
+.networking-section::before {
+  top: -150px;
+  right: -150px;
+}
+
+.networking-section::after {
+  bottom: -150px;
+  left: -150px;
+}
+
+.networking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.networking-content {
+  padding-right: 20px;
+}
+
+.networking-content h2 {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.networking-intro {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--text-light);
+  opacity: 0.95;
+  line-height: 1.8;
+  padding-left: 16px;
+  border-left: 3px solid var(--gold-2);
+}
+
+.networking-features {
+  list-style: none;
+}
+
+.networking-features li {
+  margin: 20px 0;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.4s ease;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: rgba(26, 26, 26, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.feature-icon {
+  color: var(--gold-1);
+  background: rgba(212, 175, 55, 0.1);
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.networking-features li:hover {
+  transform: translateX(10px);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.networking-features li:hover .feature-icon {
+  transform: scale(1.2);
+}
+
+/* Estilização do mockup do telefone */
+.networking-image {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.phone-mockup {
+  width: 280px;
+  height: 570px;
+  background: #000;
+  border-radius: 40px;
+  border: 8px solid #333;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6),
+              0 0 0 2px rgba(255, 215, 0, 0.3);
+  transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.phone-mockup:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7),
+              0 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 30px;
+  background: #000;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  z-index: 10;
+}
+
+.phone-screen {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  background: #121212;
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.phone-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 16px;
+  background: url('https://wallpapercat.com/w/middle-vertical-retina/4/3/8/2156904-2160x3840-samsung-4k-money-wallpaper.jpg') no-repeat center/cover;
+  border-radius: 22px;
+  padding: 20px;
+  position: relative;
+}
+
+.phone-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+}
+
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-1), var(--gold-3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  color: var(--dark-bg);
+  font-weight: bold;
+}
+
+.chat-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.chat-status {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.message {
+  max-width: 85%;
+  padding: 14px;
+  border-radius: 18px;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  animation: messageAppear 0.5s ease;
+  line-height: 1.5;
+}
+
+.sender {
+  background: rgba(51, 51, 51, 0.9);
+  color: #fff;
+  border-radius: 18px 18px 4px 18px;
+  align-self: flex-start;
+  border-left: 3px solid var(--gold-1);
+}
+
+.receiver {
+  background: linear-gradient(45deg, var(--gold-3), var(--gold-2));
+  color: #000;
+  border-radius: 18px 18px 18px 4px;
+  align-self: flex-end;
+  margin-left: auto;
+  font-weight: 600;
+  border-right: 3px solid rgba(0, 0, 0, 0.3);
+}
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação de digitando */
+.typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px;
+  background: rgba(51, 51, 51, 0.7);
+  border-radius: 16px;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: typingAnimation 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 968px) {
+  .networking-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .networking-content {
+    order: 2;
+    padding-right: 0;
+  }
+  
+  .networking-image {
+    order: 1;
+    margin-bottom: 40px;
+  }
+  
+  .networking-content h2 {
+    text-align: center;
+  }
+  
+  .phone-mockup {
+    width: 260px;
+    height: 530px;
+    transform: none;
+  }
+
+  .phone-mockup:hover {
+    transform: none;
+  }
+}

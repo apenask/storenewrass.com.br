@@ -1,0 +1,130 @@
+.footer {
+  background: var(--dark-2);
+  padding: 80px 0 40px;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--gold-3), var(--gold-1), var(--gold-3));
+  opacity: 0.7;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-brand h3 {
+  font-size: 1.6rem;
+  background: linear-gradient(to right, var(--gold-1), var(--gold-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-links-column h4 {
+  font-size: 1.2rem;
+  color: var(--gold-1);
+  margin-bottom: 20px;
+}
+
+.footer-links-column ul {
+  list-style: none;
+}
+
+.footer-links-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-links-column a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.footer-links-column a:hover {
+  color: var(--gold-1);
+  opacity: 1;
+  transform: translateX(4px);
+  display: inline-block;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-links a::before {
+  content: '→';
+  color: var(--gold-3);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover::before {
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 968px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .footer {
+    padding: 60px 0 30px;
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .footer-links-column h4 {
+    margin-bottom: 12px;
+  }
+}
